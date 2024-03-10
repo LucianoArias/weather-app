@@ -10,7 +10,6 @@ import { useGlobalContext } from '@/app/context/globalContext';
 export default function Navbar() {
   const router = useRouter();
   const { state } = useGlobalContext();
-  console.log(state);
 
   return (
     <div className="w-full py-4 flex items-center justify-between">
