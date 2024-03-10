@@ -20,11 +20,11 @@ export default function Navbar() {
           <ThemeDropdown />
           <Button
             onClick={() => {
-              router.push('https//github.com');
+              router.push('https://github.com/LucianoArias/weather-app');
             }}
             className="source-code flex items-center gap-2"
           >
-            {github} Source code
+            {github} Código fuente
           </Button>
         </div>
       </div>

@@ -5,11 +5,9 @@ import { clearSky, cloudy, drizzleIcon, navigation, rain, snow } from '@/app/uti
 import { kelvinToCelcius } from '@/app/utils/misc';
 import moment from 'moment';
 import 'moment/locale/pt-br';
-import { parse } from 'path';
 import { useEffect, useState } from 'react';
 
 export default function Temperature() {
-  moment.locale('es');
   const { forecast } = useGlobalContext();
   const { main, timezone, name, weather } = forecast;
 
@@ -21,8 +19,8 @@ export default function Temperature() {
   const minTemp = kelvinToCelcius(main?.temp_min);
   const maxTemp = kelvinToCelcius(main?.temp_max);
 
-  const [localTime, setLocalTime] = useState<string>('');
   const [currentDay, setCurrentDay] = useState<string>('');
+  const [localTime, setLocalTime] = useState<string>('');
 
   const { main: weatherMain, description } = weather[0];
 
