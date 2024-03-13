@@ -4,7 +4,7 @@ import { useGlobalContext } from '@/app/context/globalContext';
 import { clearSky, cloudy, drizzleIcon, navigation, rain, snow } from '@/app/utils/icons';
 import { kelvinToCelcius } from '@/app/utils/misc';
 import moment from 'moment';
-import 'moment/locale/pt-br';
+import 'moment/locale/es';
 import { useEffect, useState } from 'react';
 
 export default function Temperature() {

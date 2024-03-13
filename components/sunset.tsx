@@ -24,7 +24,7 @@ export default function Sunset() {
         <h2 className="flex items-center gap-2 font-medium">{sunset}Puesta de sol</h2>
         <p className="pt-4 text-2xl">{sunsetTime}</p>
       </div>
-      <p>Amanecer: {sunrise}</p>
+      <p className="text-sm">Amanecer: {sunrise}</p>
     </div>
   );
 }

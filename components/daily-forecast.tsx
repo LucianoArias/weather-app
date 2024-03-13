@@ -50,9 +50,9 @@ export default function DailyForecast() {
   return (
     <div className="pt-6 px-4 h-[12rem] border rounded-lg flex flex-col gap-8 dark:bg-dark-grey shadow-sm dark:shadow-none col-span-full md:col-span-2 xl:col-span-2">
       <div className="h-full flex gap-10 overflow-hidden">
-        {todaysForecast.length < 1 ? (
+        {todaysForecast.length <= 1 ? (
           <div>
-            <h1 className="text-[3rem] line-through text-rose-500">No Data Available!</h1>
+            <h1 className="text-[2.5rem] line-through text-rose-500">¡Datos no disponibles!</h1>
           </div>
         ) : (
           <div className="w-full">
@@ -60,7 +60,10 @@ export default function DailyForecast() {
               <CarouselContent>
                 {todaysForecast.map((forecast: { dt_txt: string; main: { temp: number } }) => {
                   return (
-                    <CarouselItem key={forecast.dt_txt} className="flex flex-col gap-4 cursor-grab">
+                    <CarouselItem
+                      key={forecast.dt_txt}
+                      className="flex flex-col gap-4 mt-1 basis-[8.5rem] cursor-grab"
+                    >
                       <p className="text-gray-300">{moment(forecast.dt_txt).format('HH:mm')}</p>
                       <p>{getIcon()}</p>
                       <p className="mt-4">{kelvinToCelcius(forecast.main.temp)}</p>
