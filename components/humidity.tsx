@@ -28,7 +28,7 @@ export default function Humidity() {
         <p className="pt-4 text-2xl">{humidity}%</p>
       </div>
 
-      <p className="text-sm">{getHumidityText(humidity)}.</p>
+      <p className="text-sm">{getHumidityText(humidity)}</p>
     </div>
   );
 }
