@@ -19,12 +19,12 @@ export default function UvIndex() {
     if (uvIndex <= 2) {
       return {
         text: 'Bajo',
-        description: 'No se requiere protección.',
+        description: 'No se requiere protección',
       };
     } else if (uvIndex <= 5) {
       return {
         text: 'Moderado',
-        description: 'Permanecer en la sombra cerca del mediodía.',
+        description: 'Permanecer en la sombra cerca del mediodía',
       };
     } else if (uvIndex <= 7) {
       return {
@@ -39,7 +39,7 @@ export default function UvIndex() {
     } else {
       return {
         text: 'Extremo',
-        description: 'Evitar estar afuera.',
+        description: 'Evitar estar afuera',
       };
     }
   };

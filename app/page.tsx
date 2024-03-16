@@ -1,10 +1,13 @@
 import AirPollution from '@/components/air-pollution';
 import DaiylForecast from '@/components/daily-forecast';
+import FeelsLike from '@/components/feels-like';
+import Humidity from '@/components/humidity';
 import Navbar from '@/components/navbar';
 import Population from '@/components/population';
 import Sunset from '@/components/sunset';
 import Temperature from '@/components/temperature';
 import UvIndex from '@/components/uv-index';
+import Visibility from '@/components/visibility';
 import Wind from '@/components/wind';
 
 export default function Home() {
@@ -23,6 +26,9 @@ export default function Home() {
             <DaiylForecast />
             <UvIndex />
             <Population />
+            <FeelsLike />
+            <Humidity />
+            <Visibility />
           </div>
         </div>
       </div>

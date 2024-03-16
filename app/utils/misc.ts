@@ -1,6 +1,6 @@
 import moment from 'moment';
 
-export const kelvinToCelcius = (kelvin: number) => {
+export const kelvinToCelsius = (kelvin: number) => {
   return Math.round(kelvin - 273.15);
 };
 

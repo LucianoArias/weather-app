@@ -2,7 +2,7 @@
 
 import { useGlobalContext } from '@/app/context/globalContext';
 import { clearSky, cloudy, drizzleIcon, navigation, rain, snow } from '@/app/utils/icons';
-import { kelvinToCelcius } from '@/app/utils/misc';
+import { kelvinToCelsius } from '@/app/utils/misc';
 import moment from 'moment';
 import 'moment/locale/es';
 import { useEffect, useState } from 'react';
@@ -15,9 +15,9 @@ export default function Temperature() {
     return <div>Cargando...</div>;
   }
 
-  const temp = kelvinToCelcius(main?.temp);
-  const minTemp = kelvinToCelcius(main?.temp_min);
-  const maxTemp = kelvinToCelcius(main?.temp_max);
+  const temp = kelvinToCelsius(main?.temp);
+  const minTemp = kelvinToCelsius(main?.temp_min);
+  const maxTemp = kelvinToCelsius(main?.temp_max);
 
   const [currentDay, setCurrentDay] = useState<string>('');
   const [localTime, setLocalTime] = useState<string>('');

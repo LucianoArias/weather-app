@@ -5,7 +5,7 @@ import { clearSky, cloudy, drizzleIcon, rain, snow } from '@/app/utils/icons';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Carousel, CarouselContent, CarouselItem } from './ui/carousel';
 import moment from 'moment';
-import { kelvinToCelcius } from '@/app/utils/misc';
+import { kelvinToCelsius } from '@/app/utils/misc';
 
 export default function DailyForecast() {
   const { forecast, fiveDayForecast } = useGlobalContext();
@@ -66,7 +66,7 @@ export default function DailyForecast() {
                     >
                       <p className="text-gray-300">{moment(forecast.dt_txt).format('HH:mm')}</p>
                       <p>{getIcon()}</p>
-                      <p className="mt-4">{kelvinToCelcius(forecast.main.temp)}</p>
+                      <p className="mt-4">{kelvinToCelsius(forecast.main.temp)}</p>
                     </CarouselItem>
                   );
                 })}
