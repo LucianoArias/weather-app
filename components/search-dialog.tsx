@@ -3,7 +3,7 @@
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { commandIcon } from '@/app/utils/icons';
-import { Command, CommandInput } from '@/components/ui/command';
+import { Command, CommandInput, CommandList } from '@/components/ui/command';
 
 export default function SearchDialog() {
   return (
@@ -23,10 +23,12 @@ export default function SearchDialog() {
         </DialogTrigger>
         <DialogContent className="p-0">
           <Command className="rounded-lg border shadow-md">
-            <CommandInput placeholder="Buenos Aires..." />
-            <ul className="px-3 pb-2">
-              <p className="p-2 text-sm text-muted-foreground">Sugerencias</p>
-            </ul>
+            <CommandList>
+              <CommandInput placeholder="Buenos Aires..." />
+              <ul className="px-3 pb-2">
+                <p className="p-2 text-sm text-muted-foreground">Sugerencias</p>
+              </ul>
+            </CommandList>
           </Command>
         </DialogContent>
       </Dialog>
