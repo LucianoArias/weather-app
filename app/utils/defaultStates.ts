@@ -3,8 +3,8 @@ export const defaultStates = [
     name: 'Buenos Aires',
     country: 'AR',
     state: 'Buenos Aires',
-    lat: -34.61315,
-    lon: -58.37723,
+    lat: -34.6075682,
+    lon: -58.4370894,
   },
   {
     name: 'Madrid',

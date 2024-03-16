@@ -30,6 +30,12 @@ export default function DailyForecast() {
 
   const { main: weatherMain } = weather[0];
 
+  if (todaysForecast.length < 1) {
+    return (
+      <Skeleton className="h-[12rem] w-full col-span-full sm-2:col-span-2 md:col-span-2 xl:col-span-2" />
+    );
+  }
+
   const getIcon = () => {
     switch (weatherMain) {
       case 'Drizzle':
@@ -51,7 +57,7 @@ export default function DailyForecast() {
     <div className="pt-6 px-4 h-[12rem] border rounded-lg flex flex-col gap-8 dark:bg-dark-grey shadow-sm dark:shadow-none col-span-full md:col-span-2 xl:col-span-2">
       <div className="h-full flex gap-10 overflow-hidden">
         {todaysForecast.length <= 1 ? (
-          <div>
+          <div className="flex justify-center items-center">
             <h1 className="text-[2.5rem] line-through text-rose-500">¡Datos no disponibles!</h1>
           </div>
         ) : (

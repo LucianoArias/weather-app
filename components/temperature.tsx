@@ -19,8 +19,8 @@ export default function Temperature() {
   const minTemp = kelvinToCelsius(main?.temp_min);
   const maxTemp = kelvinToCelsius(main?.temp_max);
 
-  const [currentDay, setCurrentDay] = useState<string>('');
-  const [localTime, setLocalTime] = useState<string>('');
+  const [currentDay, setCurrentDay] = useState('');
+  const [localTime, setLocalTime] = useState('');
 
   const { main: weatherMain, description } = weather[0];
 

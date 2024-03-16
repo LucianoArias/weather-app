@@ -13,8 +13,6 @@ export default function FeelsLike() {
   }
 
   const { feels_like, temp_min, temp_max } = forecast?.main;
-  console.log(forecast?.main.feels_like);
-
   const feelsLikeText = (feelsLike: number, minTemp: number, maxTemp: number) => {
     const avgTemp = (minTemp + maxTemp) / 2;
 
