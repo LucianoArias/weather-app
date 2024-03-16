@@ -4,7 +4,6 @@ import AirPollution from '@/components/air-pollution';
 import DaiylForecast from '@/components/daily-forecast';
 import FeelsLike from '@/components/feels-like';
 import Humidity from '@/components/humidity';
-import Mapbox from '@/components/mapbox';
 import Navbar from '@/components/navbar';
 import Population from '@/components/population';
 import Pressure from '@/components/pressure';
@@ -14,8 +13,11 @@ import UvIndex from '@/components/uv-index';
 import Visibility from '@/components/visibility';
 import Wind from '@/components/wind';
 import FiveDayForecast from '@/components/five-day-forecast';
-import { useGlobalContextUpdate } from './context/globalContext';
-import { defaultStates } from './utils/defaultStates';
+import { useGlobalContextUpdate } from '@/app/context/globalContext';
+import { defaultStates } from '@/app/utils/defaultStates';
+import dynamic from 'next/dynamic';
+
+const DynamicComponentWithNoSSR = dynamic(() => import('../components/mapbox'), { ssr: false });
 
 export default function Home() {
   const { setActiveCityCoords } = useGlobalContextUpdate();
@@ -45,7 +47,7 @@ export default function Home() {
             <Pressure />
           </div>
           <div className="mapbox-con mt-4 flex gap-4">
-            <Mapbox />
+            <DynamicComponentWithNoSSR />
             <div className="states flex flex-col gap-3 flex-1">
               <h1 className="flex items-center gap-2 font-medium">Grandes ciudades</h1>
               <div className="flex flex-col gap-4">
