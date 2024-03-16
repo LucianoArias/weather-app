@@ -5,8 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import { useEffect } from 'react';
 import { useGlobalContext } from '@/app/context/globalContext';
 
-//@ts-ignore
-function FlyToActiveCity({ activeCityCoords }) {
+function FlyToActiveCity({ activeCityCoords }: any) {
   const map = useMap();
 
   useEffect(() => {
@@ -24,7 +23,7 @@ function FlyToActiveCity({ activeCityCoords }) {
 }
 
 export default function Mapbox() {
-  const { forecast } = useGlobalContext(); // Your coordinates
+  const { forecast } = useGlobalContext();
 
   const activeCityCoords = forecast?.coord;
 
@@ -45,7 +44,10 @@ export default function Mapbox() {
         className="rounded-lg m-4"
         style={{ height: 'calc(100% - 2rem)', width: 'calc(100% - 2rem)' }}
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
         <FlyToActiveCity activeCityCoords={activeCityCoords} />
       </MapContainer>
     </div>

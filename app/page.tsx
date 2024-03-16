@@ -1,3 +1,5 @@
+'use client';
+
 import AirPollution from '@/components/air-pollution';
 import DaiylForecast from '@/components/daily-forecast';
 import FeelsLike from '@/components/feels-like';
@@ -11,10 +13,16 @@ import Temperature from '@/components/temperature';
 import UvIndex from '@/components/uv-index';
 import Visibility from '@/components/visibility';
 import Wind from '@/components/wind';
-import { defaultStates } from './utils/defaultStates';
 import FiveDayForecast from '@/components/five-day-forecast';
+import { useGlobalContextUpdate } from './context/globalContext';
+import { defaultStates } from './utils/defaultStates';
 
 export default function Home() {
+  const { setActiveCityCoords } = useGlobalContextUpdate();
+  const getClickedCityCoord = (lat: number, lon: number) => {
+    setActiveCityCoords([lat, lon]);
+  };
+
   return (
     <main className="mx-[1rem] lg:mx-[2rem] xl:mx-[6rem] 2xl:mx-[16rem] m-auto">
       <Navbar />
@@ -46,6 +54,9 @@ export default function Home() {
                     <div
                       key={index}
                       className="border rounded-lg cursor-pointer dark:bg-dark-grey shadow-sm dark:shadow-none"
+                      onClick={() => {
+                        getClickedCityCoord(state.lat, state.lon);
+                      }}
                     >
                       <p className="px-6 py-4">{state.name}</p>
                     </div>
