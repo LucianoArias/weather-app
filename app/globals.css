@@ -108,15 +108,6 @@ body::-webkit-scrollbar-thumb:hover {
   background-image: linear-gradient(to right, #00dfff 0%, #00f9ff 20%, yellow);
 }
 
-.footer-text > img {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease-in-out;
-}
-
-footer:hover .footer-text > img {
-  filter: grayscale(0%);
-}
-
 @media screen and (max-width: 581px) {
   .btn-group {
     position: fixed;

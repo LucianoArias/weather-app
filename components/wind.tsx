@@ -21,7 +21,7 @@ export default function Wind() {
         <div className="image relative">
           <Image src="/images/compass_body.svg" alt="compass" width={110} height={110} />
           <Image
-            className="absolute top-0 left-[50%] transition-all duration-500 ease-in-out dark:invert"
+            className="absolute top-0 left-[46%] transition-all duration-500 ease-in-out dark:invert"
             src="/images/compass_arrow.svg"
             alt="compass"
             width={11}

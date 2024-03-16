@@ -63,3 +63,8 @@ export const formatNumber = (num: number) => {
     return null;
   }
 };
+
+export const unixToDay = (unix: number) => {
+  const format = moment.unix(unix).format('ddd');
+  return format.charAt(0).toUpperCase() + format.slice(1);
+};

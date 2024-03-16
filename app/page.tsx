@@ -12,6 +12,7 @@ import UvIndex from '@/components/uv-index';
 import Visibility from '@/components/visibility';
 import Wind from '@/components/wind';
 import { defaultStates } from './utils/defaultStates';
+import FiveDayForecast from '@/components/five-day-forecast';
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
       <Navbar />
       <div className="pb-4 flex flex-col gap-4 md:flex-row">
         <div className="flex flex-col gap-4 w-full min-w-[18rem] md:w-[35rem]">
-          <Temperature></Temperature>
+          <Temperature />
+          <FiveDayForecast />
         </div>
         <div className="flex flex-col w-full">
           <div className="instruments grid h-full gap-4 col-span-full sm-2:col-span-2 lg:grid-cols-3 xl:grid-cols-4">
